@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ article > img{
+ max-height: 50px;
+}
+@import "dropzone/dist/min/dropzone.min.css";
+@import "dropzone/dist/min/basic.min.css";

@@ -1,12 +1,22 @@
 <div id="<%= dom_id post %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
+  <p class="my-2">
+    <strong class="block font-medium mb-1">Comment:</strong>
     <%= post.title %>
   </p>
-
+  <p class="my-2">
+    <strong class="block font-medium mb-1">File:</strong>
+    <%= link_to post.feature_file.blob.filename , post%>
+  </p>
+  <% if post.feature_file.present? %>
+  <% if post.feature_file.content_type.include?('png')  || post.feature_file.content_type.include?('jpg') || post.feature_file.content_type.include?('jpeg')%>
+    <%= image_tag(post.feature_file) if post.feature_file.present? %>
+  <% else%>
+  <%= image_tag("file.png", alt: 'file', width:'50px', height:"50px") %>
+  <% end %>
+  <% end %>
+  <!--
   <p class="my-5">
     <strong class="block font-medium mb-1">User:</strong>
     <%= post.user_id %>
-  </p>
-
+  </p>-->
 </div>

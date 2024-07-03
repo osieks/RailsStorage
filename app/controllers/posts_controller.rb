@@ -4,7 +4,8 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    #@posts = Post.all
+    @posts = Post.where("user_id IN (?)", current_user)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -24,7 +25,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    
+    #@post.title = "file"
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
@@ -63,10 +65,11 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+      #@posts = @user.posts
     end
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :user_id)
+      params.require(:post).permit(:title, :user_id, :feature_file)
     end
 end
