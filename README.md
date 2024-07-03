@@ -7,7 +7,7 @@ You can visit this site on: http://mdziezok.ddns.net:3000/
 ## Getting Started
 
 1. **Prerequisites:**
-   - Make sure you have Ruby and Rails installed on your system.
+   - Make sure you have Ruby and Rails installed on your system. (on Windows recommended to use WSL)
    - Install Node.js and Yarn for managing JavaScript dependencies.
 
 2. **Clone the Repository:**
