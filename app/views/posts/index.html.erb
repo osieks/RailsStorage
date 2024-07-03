@@ -1,50 +1,53 @@
+
 <div class="bg-white">
     <div class="relative isolate px-6 lg:px-8">
       <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
         <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
         </div>
     </div>
-  <div class="w-full relative isolate px-6 py-6 lg:px-8">
+  <div class="w-full relative isolate px-3 py-3 lg:px-8">
     <% content_for :title, "Drive" %>
 
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center justify-center items-center">
       <div class="flex lg:flex-1 ">
           <a href="/" class="font-bold tracking-tight text-gray-900 group">Storage<span class="text-violet-700 group-hover:text-violet-500 transition-all duration-300 ">APP</span><span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 group-hover:bg-violet-500 bg-violet-700"></span>
           </a>
 
       <p class="px-3">></p>
-      <h3 class="font-bold text-1xl justify-self-start">Your Drive</h3>
+      <h3 class="font-bold text-1xl justify-self-start"><span class="hidden md:inline-block">Your</span> Drive</h3>
       </div>
       <%= link_to "New file", new_post_path, class: "rounded-lg py-3 px-5 bg-violet-600  hover:bg-violet-500  transition-all duration-300 text-white block font-medium" %>
     </div>
 
-    <div id="posts" class="mx-auto max-w-3xl backdrop-blur-md bg-white/30 rounded-lg shadow-2xl px-3 py-3 my-5">
+    <div id="posts" class="mx-auto max-w-3xl lg:max-w-4xl backdrop-blur-md bg-white/30 rounded-lg shadow-2xl px-3 py-3 my-5">
       <% @posts.each do |post| %>
-        <article class="rounded-lg w-full flex lg:flex-1 justify-between justify-center items-center px-2 py-2 h-24 overflow-hidden">
-          <%= link_to post do %>
-            <% if post.feature_file.present? %>
-            <% if post.feature_file.content_type.include?('png')  || post.feature_file.content_type.include?('jpg') || post.feature_file.content_type.include?('jpeg')%>
-              <%= image_tag(post.feature_file, width: "50", height: "50") if post.feature_file.present? %>
-            <% else%>
-            <%= image_tag("file.png", alt: 'file', width: "50", height: "50") %>
+        <article class="rounded-lg w-full flex md:flex justify-between justify-center items-center px-2 py-2 h-24 overflow-hidden">
+          <div class="flex max-w-fill overflow-hidden">
+            <%= link_to post do %>
+              <% if post.feature_file.present? %>
+              <% if post.feature_file.content_type.include?('png')  || post.feature_file.content_type.include?('jpg') || post.feature_file.content_type.include?('jpeg')%>
+                <%= image_tag(post.feature_file, width: "50", height: "50", class:"max-[520px]:hidden") if post.feature_file.present? %>
+              <% else%>
+              <%= image_tag("file.png", alt: 'file', width: "50", height: "50", class:"max-[520px]:hidden") %>
+              <% end %>
+              <%else %>
+              <div style="width:50px; height:50px">&nbsp;</div>
+              <% end %>
             <% end %>
-            <%else %>
-            <div style="width:50px; height:50px">&nbsp;</div>
-            <% end %>
-          <% end %>
-          <div class="p-1 flex">
-            <% if post.feature_file.present? %>
-            <%= link_to post.feature_file.blob.filename , post%> &nbsp;
-            <% end %>
-            <h1 class="font-bold"><%= link_to post.title, post %></h1>
+            <div class="p-1 justify-self-start">
+              <% if post.feature_file.present? %>
+              <%= link_to post.feature_file.blob.filename , post%>&nbsp;
+              <% end %>
+              <h1 class="font-bold"><%= link_to post.title, post %></h1>
+            </div>
           </div>
           <% if user_signed_in? && current_user.id == post.user_id %>
               <div class="m flex">
-                <%= link_to 'Edit', edit_post_path(post), class: "ml-2 py-3 px-5 bg-gray-400 hover:bg-gray-200 rounded-lg inline-block font-medium" %>
-            <%= button_to "Delete file", post, method: :delete, class: "ml-2 py-3 px-5 bg-gray-400 hover:bg-gray-200 rounded-lg inline-block font-medium" %>
+                <%= link_to 'Edit', edit_post_path(post), class: "ml-2 my-2  py-3 px-5 bg-gray-400 hover:bg-gray-200 rounded-lg inline-block font-medium" %>
+            <%= button_to "Delete file", post, method: :delete, class: "ml-2 my-2  py-3 px-5 bg-gray-400 hover:bg-gray-200 rounded-lg inline-block font-medium hidden md:inline-block" %>
             <% if post.feature_file.present? %>
             <%= link_to rails_blob_path(post.feature_file, disposition: "attachment") do %>
-            <div class ="ml-2 py-3 px-5 bg-violet-700 hover:bg-violet-500 rounded-lg inline-block font-medium text-white">Download file</div>
+            <div class ="ml-2 my-2 py-3 px-5 bg-violet-700 hover:bg-violet-500 rounded-lg inline-block font-medium text-white ransition-all duration-300"><span>&darr;</span><span class="hidden md:inline-block">Download file</span></div>
             <% end %>
             <% end %>
               </div>

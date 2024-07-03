@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="my-5">
     <%= form.label :Comment %>
     <%= form.text_field :title, class: "block shadow rounded-md border border-gray-400 px-3 py-2 mt-2 w-full" %>
@@ -25,7 +24,7 @@
     <%= form.file_field :feature_file, 
     direct_upload: true , 
     data: { target: "dropzone.input" } ,
-    class: "inline-block shadow rounded-md border border-gray-400 px-3 py-2 mt-2 w-full h-96" %>
+    class: "inline-block shadow rounded-md border border-gray-400 px-3 py-2 mt-2 w-full md:h-24" %>
 
     <div class="dropzone-msg dz-message needsclick text-gray-600 "> 
       <h3 class="dropzone-msg-title">Drag and drop</h3>
@@ -40,6 +39,6 @@
   </div>
   -->
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "mx-2 my-2  rounded-lg py-3 px-5 bg-violet-700 hover:bg-violet-500 ransition-all duration-300 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
