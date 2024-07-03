@@ -2,6 +2,7 @@
 # RailsStorage
 
 Welcome to StorageAPP! This is a Ruby on Rails application that allows users to manage posts using Active Storage for file attachments and Tailwind CSS for styling.
+You can visit this site on: http://mdziezok.ddns.net:3000/
 
 ## Getting Started
 
@@ -28,7 +29,8 @@ Welcome to StorageAPP! This is a Ruby on Rails application that allows users to 
    ```bash
     rails server
 
-3. **Access the App: Open your browser and navigate to http://mdziezok.ddns.net:3000/**
+3. **Access the App:**
+ Open your browser and navigate to http://localhost:3000.
 
 # Features
 - User authentication (login and logout)
