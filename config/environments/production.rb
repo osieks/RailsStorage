@@ -1,5 +1,8 @@
 require "active_support/core_ext/integer/time"
 
+
+Rails.application.config.hosts << "mdziezok.ddns.net:3000"
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -87,6 +90,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.hosts << "mdziezok.ddns.net:3000"
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
