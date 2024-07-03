@@ -78,7 +78,7 @@
         <% if current_user %>
           <%= link_to link_to "Start using", posts_path,  class: "rounded-md mx-5 my-5 px-6 py-3 text-mdfont-semibold text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-indigo-600 bg-violet-600  hover:bg-violet-500  transition-all duration-300 inline-block" %>
         <% end %>
-        <p class="mt-6 text-lg leading-8 text-gray-600">This website was built using Ruby on Rails on Ubuntu using WSL, then using Tailwind and some basic templates.</p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">This website was built using Ruby on Rails on Ubuntu using WSL, then using Tailwind and some basic templates. Storing files with Active Storage on posts scaffold.</p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
         <% if !current_user %>
           <%= link_to "Sign up", new_user_registration_path,  class: "rounded-md  px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-indigo-600 bg-violet-600  hover:bg-violet-500  transition-all duration-300" %>

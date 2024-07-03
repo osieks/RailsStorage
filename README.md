@@ -1,24 +1,47 @@
 # README
+# RailsStorage
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to StorageAPP! This is a Ruby on Rails application that allows users to manage posts using Active Storage for file attachments and Tailwind CSS for styling.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+1. **Prerequisites:**
+   - Make sure you have Ruby and Rails installed on your system.
+   - Install Node.js and Yarn for managing JavaScript dependencies.
 
-* System dependencies
+2. **Clone the Repository:**
+   ```bash
+   git clone RailsStorage
+   cd RailsStorage
 
-* Configuration
+3. **Install Dependencies:**
+bundle install
+yarn install
 
-* Database creation
+3. **Database Setup:**
+rails db:create
+rails db:migrate
 
-* Database initialization
+3. **Run the Application:**
+rails server
 
-* How to run the test suite
+3. **Access the App: Open your browser and navigate to http://localhost:3000.**
 
-* Services (job queues, cache servers, search engines, etc.)
+# Features
+User authentication (login and logout)
+File uploads using Active Storage
+Posts management (CRUD operations)
+Tailwind CSS Integration
+The project uses Tailwind CSS for styling. You can find the styles in the app/assets/stylesheets/application.scss file. Customize the styles according to your design requirements.
 
-* Deployment instructions
+# Active Storage
+Active Storage is integrated for file attachments. You can attach files to posts using the has_one_attached :file association in the Post model.
 
-* ...
+# Contributing
+Feel free to contribute to this project by opening issues or submitting pull requests. Let’s make StorageAPP even better!
+
+# License
+This project is open-source and available under the MIT License.
+
+
+
