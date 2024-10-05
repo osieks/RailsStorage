@@ -11,7 +11,7 @@ Welcome to StorageAPP! This is a Ruby on Rails application that allows users to 
 
 2. **Clone the Repository:**
    ```bash
-   git clone RailsStorage
+   git clone [RailsStorage](https://github.com/osieks/RailsStorage)
    cd RailsStorage
 
 3. **Install Dependencies:**
