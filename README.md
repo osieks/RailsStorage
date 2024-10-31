@@ -1,4 +1,5 @@
 # README
+visit http://mdziezok.ddns.net:3000/
 # RailsStorage
 
 Welcome to StorageAPP! This is a Ruby on Rails application that allows users to manage posts using Active Storage for file attachments and Tailwind CSS for styling.
