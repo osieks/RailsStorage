@@ -20,16 +20,22 @@ Welcome to StorageAPP! This is a Ruby on Rails application that allows users to 
     bundle install
     yarn install
 
-3. **Database Setup:**
+4. **Database Setup:**
    ```bash
     rails db:create
     rails db:migrate
 
-3. **Run the Application:**
+5. **Run the Application:**
    ```bash
     rails server
 
-3. **Access the App:**
+or run
+
+   ```bash
+   docker compose up --build -d
+   ```
+
+7. **Access the App:**
  Open your browser and navigate to http://localhost:3000.
 
 # Features
