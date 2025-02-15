@@ -6,6 +6,8 @@ Welcome to StorageAPP! This is a Ruby on Rails application that allows users to 
 
 ## Getting Started
 
+Use dockerfile or do it on your local machine:
+
 1. **Prerequisites:**
    - Make sure you have Ruby and Rails installed on your system. (on Windows recommended to use WSL)
    - Install Node.js and Yarn for managing JavaScript dependencies.

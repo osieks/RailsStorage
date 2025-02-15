@@ -76,4 +76,6 @@ Rails.application.configure do
 
   
   config.hosts << "mdziezok.ddns.net:3000"
+  config.hosts << "mdziezok.ddns.net"
+  config.hosts << "mdziezok.ddns.net/storage"
 end

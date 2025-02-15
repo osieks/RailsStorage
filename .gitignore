@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/.Dockerfile_prev
 
 # Ignore all environment files (except templates).
 /.env*
